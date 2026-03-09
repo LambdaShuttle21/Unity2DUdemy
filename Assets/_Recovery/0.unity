@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 242742529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -454,37 +454,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1321251221
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1321251222}
-  m_Layer: 0
-  m_Name: GroundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1321251222
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321251221}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.028, y: -1.32, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1798057898}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1358898552
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +465,7 @@ GameObject:
   - component: {fileID: 1358898554}
   - component: {fileID: 1358898553}
   - component: {fileID: 1358898555}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,12 +620,11 @@ Transform:
   m_GameObject: {fileID: 1798057896}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.577, y: -1.891, z: 0}
+  m_LocalPosition: {x: 1.85, y: -1.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 242742530}
-  - {fileID: 1321251222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1798057899
@@ -671,15 +639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b39acf8e3cf2784a8b6460ee34cfbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  moveSpeed: 5
-  jumpForce: 12
+  moveSpeed: 3.5
+  jumpForce: 8
   xInput: 0
-  groundCheck: {fileID: 1321251222}
-  groundCheckDistance: 0.1
-  isGrounded: 0
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!50 &1798057900
 Rigidbody2D:
   serializedVersion: 5
@@ -693,9 +655,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0.5
+  m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 5329de8a2d402734c9f38e3c17fdaed0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -741,8 +703,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.07811451, y: -0.28810385}
-  m_Size: {x: 0.7591915, y: 2.0562072}
+  m_Offset: {x: 0.031708896, y: -0.2918651}
+  m_Size: {x: 0.76309574, y: 2.0669699}
   m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
