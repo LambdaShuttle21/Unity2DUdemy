@@ -11,7 +11,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     [Header("Movement details")]
-
     [SerializeField] private float moveSpeed = 3.5f;
     [SerializeField] private float jumpForce = 8f;
     public float xInput;
@@ -48,13 +47,16 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private void HandleAnimations()
     {
         bool isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.01f;//(0,0) si velocidad mayor a 0, isMoving = true
-        animator.SetBool("isMoving", isMoving);//this sets the movement animation correctly, if you move (isMoving = true) then
+        // Animator parameters (blend trees)
+        animator.SetFloat("xVelocity", rb.linearVelocity.x);
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        animator.SetBool("isGrounded", isGrounded);//this sets the movement animation correctly, if you move (isMoving = true) then
         // the animator transition of "playerMove" will execute, therefore nothing will happen (playerIdle will execute eternally haha)
         // sprite flip
-        if (rb.linearVelocity.x != 0)
-        {
-            spriteRenderer.flipX = rb.linearVelocity.x < 0;
-        }
+        if (rb.linearVelocity.x > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (rb.linearVelocity.x < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
     }
     private void HandleInput()
     {
@@ -80,11 +82,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void HandleCollision()
     {
-        isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
-        //(initial position, direction (0,-1), 
+        isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);//
+        //(initial position, direction (0,-1), distance to ground, which layer is meant to be ground)
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmos()// Imaginary line meant to touch the ground and check whether isGrounded = true or false, this only serves as reference for the Raycast
     {
         if (groundCheck == null) return;
 
