@@ -1,39 +1,53 @@
-using System.Threading;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Entity
 {
-    [SerializeField] private float redColorDuration = 1;
-    private SpriteRenderer sr;
-    public float timer;
-
-    private void Awake()
+    protected override void Update()
     {
-        sr = GetComponent<SpriteRenderer>();
+        HandleCollision();
+        HandleAnimations();
+        HandleMovement();
     }
-    // Update is called once per frame
-    private void Update()
+    protected override void HandleMovement()
     {
-        timer = timer - Time.deltaTime;
-    }
-    [ContextMenu("Update timer")]
-    private void UpdateTimer()
-    {
-        timer = redColorDuration;
-        if (timer < 0)
+        if (canMove == true)//this cames from PlayerAnimationEvents -> AE_DisableMovementAndJump
         {
-
+            rb.linearVelocity = new Vector2(facingDir * moveSpeed, rb.linearVelocityY);//(x,y)
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocityY);//(x,y)
         }
     }
-    public void TakeDamage()
-    {
-        sr.color = Color.red;
-        timer = redColorDuration;// From 5 to 0 seconds
-        //Invoke(nameof(TurnWhite), redColorDuration);//red color will last 1 second and then it will turn white
-    }
 
-    public void TurnWhite()
-    {
-        sr.color = Color.white;
-    }
+    //[SerializeField] protected float moveSpeed;// Protected: Only child components will be able to use
+    //[SerializeField] protected string enemyName;// Encapsulation: Getting properties locked only to his
+    //// childs by making them usable with a public method
+
+    //private void Update()
+    //{
+    //   // MoveAround();
+
+    //    if (Input.GetKeyDown(KeyCode.F))
+    //    {
+    //        Attack();
+    //    }
+    //}
+    //private void MoveAround()
+    //{
+    //    Debug.Log(enemyName + " moves at speed " + moveSpeed);
+    //}
+    //// virtual: it allows overriding methods in childs
+    //protected virtual void Attack()
+    //{
+    //    Debug.Log(enemyName + "attacks!");
+    //}
+    //public void TakeDamage()
+    //{
+
+    //}
+    //public string getEnemyName()
+    //{
+    //    return enemyName;
+    //}
 }

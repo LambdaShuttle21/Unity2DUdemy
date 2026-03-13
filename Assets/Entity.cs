@@ -6,22 +6,23 @@ using UnityEngine;
 using UnityEngine.InputSystem.XInput;
 //pivot: the center of my sprite
 
-public class Player : MonoBehaviour
+public class Entity : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
+    protected Rigidbody2D rb;
+    protected Animator animator;
+    protected SpriteRenderer spriteRenderer;
 
     [Header("Attack details")]
-    [SerializeField] private float attackRadius;
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private LayerMask whatIsEnemy;
+    [SerializeField] protected float attackRadius;
+    [SerializeField] protected Transform attackPoint;
+    [SerializeField] protected LayerMask whatIsTarget;
 
-    [Header("Movement details")] 
-    [SerializeField] private float moveSpeed = 3.5f;
+    [Header("Movement details")]
+    [SerializeField] protected float moveSpeed = 3.5f;
     [SerializeField] private float jumpForce = 8f;
+    protected int facingDir = 1;//for the enemy's speed
     public float xInput;
-    private bool canMove = true;
+    protected bool canMove = true;
     private bool canJump = true;
     //public bool facingRight = true;
 
@@ -44,7 +45,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         HandleCollision();
         HandleInput();
@@ -52,23 +53,34 @@ public class Player : MonoBehaviour
         HandleAnimations();
         //HandleFlip();
     }
-    public void DamageEnemies()
+    public void DamageTargets()
     {
         // Collision with enemies will be saved in enemyColliders (array, type of Collider2D) only the enemies within the circle, at the next hit the array will reset itself
-        Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, whatIsEnemy);// Overlap that will detect anything with the circle
+        Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, whatIsTarget);// Overlap that will detect anything with the circle
                                                                                                                   // we set up
 
         foreach (Collider2D enem in enemyColliders)
         {
-            enem.GetComponent<Enemy>().TakeDamage();
+            //Enemy enemyScript = enem.GetComponent<Enemy>();
+            //enemyScript.TakeDamage();
+
+            //Debug.Log("I damaged enemy: " + enemyScript.getEnemyName());
+            //Entity entityTarget = enem.GetComponent<Entity>();
+            //entityTarget.TakeDamage();
         }
     }
+
+    private void TakeDamage()
+    {
+        throw new NotImplementedException();
+    }
+
     public void EnableMovementAndJump(bool enable)
     {
         canMove = enable;
         canJump = enable;
     }
-    private void HandleAnimations()
+    protected void HandleAnimations()
     {
         bool isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.01f;//(0,0) si velocidad mayor a 0, isMoving = true
 
@@ -97,14 +109,14 @@ public class Player : MonoBehaviour
 
     }
 
-    private void TryToAttack()
+    protected virtual void TryToAttack()
     {
         if (isGrounded)
         {
             animator.SetTrigger("attack");
         }
     }
-    private void HandleMovement()
+    protected virtual void HandleMovement()
     {
         if (canMove == true)//this cames from PlayerAnimationEvents -> AE_DisableMovementAndJump
         {
@@ -125,7 +137,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private void HandleCollision()
+    protected virtual void HandleCollision()
     {
         isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);//
         //(initial position, direction (0,-1), distance to ground, which layer is meant to be ground)
