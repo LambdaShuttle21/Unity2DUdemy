@@ -2,11 +2,23 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
+    private bool playerDetected;
+    
+
     protected override void Update()
     {
         HandleCollision();
-        HandleAnimations();
+        HandleAttack();
         HandleMovement();
+        HandleAnimations();
+    }
+    protected override void HandleAttack()
+    {
+        if (playerDetected)
+        {
+            //EnableMovementAndJump(false);
+            animator.SetTrigger("attack");
+        }
     }
     protected override void HandleMovement()
     {
@@ -18,6 +30,13 @@ public class Enemy : Entity
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocityY);//(x,y)
         }
+    }
+
+    protected override void HandleCollision()
+    {
+        base.HandleCollision();
+        //if player is within the overlap circle playerDetected = true and the enemy will execute the attack animation
+        playerDetected = Physics2D.OverlapCircle(attackPoint.position, attackRadius, whatIsTarget);
     }
 
     //[SerializeField] protected float moveSpeed;// Protected: Only child components will be able to use

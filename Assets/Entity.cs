@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -10,12 +11,21 @@ public class Entity : MonoBehaviour
 {
     protected Rigidbody2D rb;
     protected Animator animator;
-    protected SpriteRenderer spriteRenderer;
+    protected Collider2D col;
+    protected SpriteRenderer sr;
+
+    [Header("Health")]
+    [SerializeField] private int maxHealth = 1;
+    [SerializeField] private int currentHealth;
+    [SerializeField] private Material damageMaterial;
+    [SerializeField] private float damageFeedbackDuration = .2f;
+    private Coroutine damageFeedbackCoroutine;// Active coroutine
 
     [Header("Attack details")]
     [SerializeField] protected float attackRadius;
     [SerializeField] protected Transform attackPoint;
     [SerializeField] protected LayerMask whatIsTarget;
+    protected bool isAttacking;
 
     [Header("Movement details")]
     [SerializeField] protected float moveSpeed = 3.5f;
@@ -36,7 +46,9 @@ public class Entity : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        sr = GetComponentInChildren<SpriteRenderer>();
+        col = GetComponent<Collider2D>();
+        currentHealth = maxHealth;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,26 +65,70 @@ public class Entity : MonoBehaviour
         HandleAnimations();
         //HandleFlip();
     }
+
     public void DamageTargets()
     {
         // Collision with enemies will be saved in enemyColliders (array, type of Collider2D) only the enemies within the circle, at the next hit the array will reset itself
         Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, whatIsTarget);// Overlap that will detect anything with the circle
-                                                                                                                  // we set up
+                                                                                                                   // we set up
 
         foreach (Collider2D enem in enemyColliders)
         {
-            //Enemy enemyScript = enem.GetComponent<Enemy>();
-            //enemyScript.TakeDamage();
-
-            //Debug.Log("I damaged enemy: " + enemyScript.getEnemyName());
-            //Entity entityTarget = enem.GetComponent<Entity>();
-            //entityTarget.TakeDamage();
+            Entity entityTarget = enem.GetComponent<Entity>();// I get my component through foreach loop (enemies in the array, type of Entity)
+            entityTarget.TakeDamage();// Health logic
         }
     }
 
     private void TakeDamage()
     {
-        throw new NotImplementedException();
+        currentHealth = currentHealth - 1;
+        PlayDamageFeedback();
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void PlayDamageFeedback() // It defines wether a coroutine is
+                                      // active or not to stop it and exec a new one or just exec a new one
+    {
+        if (damageFeedbackCoroutine != null) // active coroutine
+        {
+            StopCoroutine(damageFeedbackCoroutine); // we stop
+        }
+
+        damageFeedbackCoroutine = StartCoroutine(DamageFeedbackCo()); // Start a new one and save it in my private Coroutine variable
+        // DamageFeedbackCo(); starts the coroutine
+    }
+
+    private IEnumerator DamageFeedbackCo()
+    {
+        //pa que no pete sino hay spriterenderer
+        if (sr == null)
+        {
+            yield break;
+        }
+
+        Material originalMaterial = sr.material;
+
+        sr.material = damageMaterial;// We assign our damage material
+        // to our current material so everytime we get hit the coroutine
+        // resets from the start instead of having multiple coroutines
+
+        yield return new WaitForSeconds(damageFeedbackDuration); // we assign
+        // the coroutine duration
+
+        // Then we return the material to its original state
+        sr.material = originalMaterial;
+    }
+    protected virtual void Die()// Physics for die method (no animations yet)
+    {
+        animator.enabled = false;
+        col.enabled = false;
+
+        rb.gravityScale = 12; // should fall asap
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 15);// it goes up and falls too fast, like bouncing
     }
 
     public void EnableMovementAndJump(bool enable)
@@ -89,11 +145,12 @@ public class Entity : MonoBehaviour
         animator.SetFloat("yVelocity", rb.linearVelocity.y);
         animator.SetBool("isGrounded", isGrounded);//this sets the movement animation correctly, if you move (isMoving = true) then
         // the animator transition of "playerMove" will execute, therefore nothing will happen (playerIdle will execute eternally haha)
+
         // sprite flip
         if (rb.linearVelocity.x > 0)
             transform.localScale = new Vector3(1, 1, 1);
         else if (rb.linearVelocity.x < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);//I just flip the x axis if my speed is a negative one
     }
     private void HandleInput()
     {
@@ -105,11 +162,11 @@ public class Entity : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
 
-            TryToAttack();
+            HandleAttack();
 
     }
 
-    protected virtual void TryToAttack()
+    protected virtual void HandleAttack()
     {
         if (isGrounded)
         {
