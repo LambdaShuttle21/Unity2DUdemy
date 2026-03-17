@@ -27,19 +27,14 @@ public class Entity : MonoBehaviour
     [SerializeField] protected LayerMask whatIsTarget;
     protected bool isAttacking;
 
-    [Header("Movement details")]
-    [SerializeField] protected float moveSpeed = 3.5f;
-    [SerializeField] private float jumpForce = 8f;
     protected int facingDir = 1;//for the enemy's speed
-    public float xInput;
     protected bool canMove = true;
-    private bool canJump = true;
     //public bool facingRight = true;
 
     [Header("Collision details")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckDistance;
-    [SerializeField] private bool isGrounded;
+    [SerializeField] protected bool isGrounded;
     [SerializeField] private LayerMask whatIsGround;
     // We must obtain the components we're using from Unity
     private void Awake()
@@ -60,7 +55,7 @@ public class Entity : MonoBehaviour
     protected virtual void Update()
     {
         HandleCollision();
-        HandleInput();
+
         HandleMovement();
         HandleAnimations();
         //HandleFlip();
@@ -129,14 +124,16 @@ public class Entity : MonoBehaviour
 
         rb.gravityScale = 12; // should fall asap
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 15);// it goes up and falls too fast, like bouncing
+
+        Destroy(gameObject, 3);
     }
 
-    public void EnableMovementAndJump(bool enable)
+    public virtual void EnableMovement(bool enable)
     {
         canMove = enable;
-        canJump = enable;
+        //canJump = enable;
     }
-    protected void HandleAnimations()
+    protected virtual void HandleAnimations()
     {
         bool isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.01f;//(0,0) si velocidad mayor a 0, isMoving = true
 
@@ -152,19 +149,7 @@ public class Entity : MonoBehaviour
         else if (rb.linearVelocity.x < 0)
             transform.localScale = new Vector3(-1, 1, 1);//I just flip the x axis if my speed is a negative one
     }
-    private void HandleInput()
-    {
-        xInput = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space))
-
-            TryToJump();
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-
-            HandleAttack();
-
-    }
 
     protected virtual void HandleAttack()
     {
@@ -175,24 +160,8 @@ public class Entity : MonoBehaviour
     }
     protected virtual void HandleMovement()
     {
-        if (canMove == true)//this cames from PlayerAnimationEvents -> AE_DisableMovementAndJump
-        {
-            rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocityY);//(x,y)
-        }
-        else
-        {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocityY);//(x,y)
-        }
-
     }
-    private void TryToJump()
-    {
-        if (isGrounded && canJump)// canJump cames from PlayerAnimationEvents -> DisableMovementAndJump
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        }
 
-    }
 
     protected virtual void HandleCollision()
     {
@@ -209,8 +178,12 @@ public class Entity : MonoBehaviour
         Gizmos.DrawLine(groundCheck.position, groundCheck.position + Vector3.down * groundCheckDistance);// (My initial position, the direction of the
         // Gizmos.DrawLine, I will sum up the line distance and direction (vector) to my initial position 
 
-        //Gizmos for enemy
-        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        if (attackPoint != null)
+        {
+            //Gizmos for enemy
+            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        }
+
     }
     //private void HandleFlip()
     //{

@@ -10,9 +10,9 @@ public class Entity_AnimationEvents : MonoBehaviour
     }
 
     public void AE_DamageTargets() => entity.DamageTargets();
-    public void AE_DisableMovementAndJump() => entity.EnableMovementAndJump(false);
+    public void AE_DisableMovementAndJump() => entity.EnableMovement(false);
     
 
-    public void AE_EnableMovementAndJump() => entity.EnableMovementAndJump(true);
+    public void AE_EnableMovementAndJump() => entity.EnableMovement(true);
 
 }
