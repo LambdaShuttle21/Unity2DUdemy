@@ -27,17 +27,18 @@ public class Entity : MonoBehaviour
     [SerializeField] protected LayerMask whatIsTarget;
     protected bool isAttacking;
 
-    protected int facingDir = 1;//for the enemy's speed
-    protected bool canMove = true;
-    //public bool facingRight = true;
-
     [Header("Collision details")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] protected bool isGrounded;
     [SerializeField] private LayerMask whatIsGround;
     // We must obtain the components we're using from Unity
-    private void Awake()
+
+    protected int facingDir = 1;//for the enemy's speed
+    protected bool canMove = true;
+    //public bool facingRight = true;
+
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
@@ -84,6 +85,16 @@ public class Entity : MonoBehaviour
             Die();
         }
     }
+    protected virtual void Die()// Physics for die method (no animations yet)
+    {
+        animator.enabled = false;
+        col.enabled = false;
+
+        rb.gravityScale = 12; // should fall asap
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 15);// it goes up and falls too fast, like bouncing
+
+        Destroy(gameObject, 3);
+    }
 
     private void PlayDamageFeedback() // It defines wether a coroutine is
                                       // active or not to stop it and exec a new one or just exec a new one
@@ -116,16 +127,6 @@ public class Entity : MonoBehaviour
 
         // Then we return the material to its original state
         sr.material = originalMaterial;
-    }
-    protected virtual void Die()// Physics for die method (no animations yet)
-    {
-        animator.enabled = false;
-        col.enabled = false;
-
-        rb.gravityScale = 12; // should fall asap
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 15);// it goes up and falls too fast, like bouncing
-
-        Destroy(gameObject, 3);
     }
 
     public virtual void EnableMovement(bool enable)

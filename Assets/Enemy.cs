@@ -38,6 +38,11 @@ public class Enemy : Entity
         //if player is within the overlap circle playerDetected = true and the enemy will execute the attack animation
         playerDetected = Physics2D.OverlapCircle(attackPoint.position, attackRadius, whatIsTarget);
     }
+    protected override void Die()
+    {
+        base.Die();
+        UI.instance.AddKillCount();
+    }
 
     //[SerializeField] protected float moveSpeed;// Protected: Only child components will be able to use
     //[SerializeField] protected string enemyName;// Encapsulation: Getting properties locked only to his
