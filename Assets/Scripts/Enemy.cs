@@ -12,6 +12,17 @@ public class Enemy : Entity
         base.Update();
         HandleAttack();
     }
+    public override void HandleAnimations()
+    {
+        animator.SetFloat("xVelocity", rb.linearVelocity.x);
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        animator.SetBool("isGrounded", isGrounded);
+
+        if (facingDir > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (facingDir < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+    }
     protected override void HandleAttack()
     {
         if (playerDetected)

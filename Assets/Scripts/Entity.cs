@@ -56,7 +56,6 @@ public class Entity : MonoBehaviour
     protected virtual void Update()
     {
         HandleCollision();
-
         HandleMovement();
         HandleAnimations();
         //HandleFlip();
@@ -134,7 +133,7 @@ public class Entity : MonoBehaviour
         canMove = enable;
         //canJump = enable;
     }
-    protected virtual void HandleAnimations()
+    public virtual void HandleAnimations()
     {
         bool isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.01f;//(0,0) si velocidad mayor a 0, isMoving = true
 
@@ -151,6 +150,15 @@ public class Entity : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);//I just flip the x axis if my speed is a negative one
     }
 
+    public virtual void SetFacingDirection(int direction) // For Enemy_Respawner logic
+    {
+        facingDir = direction;
+
+        if (facingDir > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (facingDir < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+    }
 
     protected virtual void HandleAttack()
     {
@@ -166,7 +174,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void HandleCollision()
     {
-        isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);//
+        isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
         //(initial position, direction (0,-1), distance to ground, which layer is meant to be ground)
     }
 

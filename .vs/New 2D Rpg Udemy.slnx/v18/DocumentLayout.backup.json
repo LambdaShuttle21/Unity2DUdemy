@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Peter\\New 2D Rpg Udemy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\scripts\\objecttoprotect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objecttoprotect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\scripts\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\objecttoprotect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\objecttoprotect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\DatabaseManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\DatabaseManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\scripts\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\scripts\\enemy_respawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy_respawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\entity_animationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\entity_animationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\scripts\\partidadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\partidadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\scripts\\entity_animationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\entity_animationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\peter\\new 2d rpg udemy\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\DatabaseManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\DatabaseManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,87 +50,132 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Entity.cs",
-              "RelativeDocumentMoniker": "Assets\\Entity.cs",
-              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Entity.cs",
-              "RelativeToolTip": "Assets\\Entity.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAkwF8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T08:39:59.152Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\Player.cs",
-              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Player.cs",
-              "RelativeToolTip": "Assets\\Player.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAkwDgAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T13:17:06.284Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Entity.cs",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Entity.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Entity.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Entity.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Entity.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAAwLAAAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T08:40:50.682Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "UI.cs",
-              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\UI.cs",
-              "RelativeDocumentMoniker": "Assets\\UI.cs",
-              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\UI.cs",
-              "RelativeToolTip": "Assets\\UI.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\UI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\UI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T11:21:11.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ObjectToProtect.cs",
-              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\ObjectToProtect.cs",
-              "RelativeDocumentMoniker": "Assets\\ObjectToProtect.cs",
-              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\ObjectToProtect.cs",
-              "RelativeToolTip": "Assets\\ObjectToProtect.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwB0AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T12:04:09.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Enemy.cs",
-              "RelativeDocumentMoniker": "Assets\\Enemy.cs",
-              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Enemy.cs",
-              "RelativeToolTip": "Assets\\Enemy.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAkwCsAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T13:28:22.312Z",
+              "WhenOpened": "2026-03-20T11:07:08.355Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Entity_AnimationEvents.cs",
-              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Entity_AnimationEvents.cs",
-              "RelativeDocumentMoniker": "Assets\\Entity_AnimationEvents.cs",
-              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Entity_AnimationEvents.cs",
-              "RelativeToolTip": "Assets\\Entity_AnimationEvents.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "PartidaData.cs",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\PartidaData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PartidaData.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\PartidaData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PartidaData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T09:27:37.069Z",
+              "WhenOpened": "2026-03-20T13:37:35.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ObjectToProtect.cs",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\ObjectToProtect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ObjectToProtect.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\ObjectToProtect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ObjectToProtect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T08:41:17.357Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Enemy_Respawner.cs",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Enemy_Respawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy_Respawner.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Enemy_Respawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy_Respawner.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAASwCkAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T10:58:45.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Entity_AnimationEvents.cs",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Entity_AnimationEvents.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Entity_AnimationEvents.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Entity_AnimationEvents.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Entity_AnimationEvents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T11:06:38.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Enemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:32:14.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:32:22.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseManager.cs",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\DatabaseManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DatabaseManager.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\DatabaseManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DatabaseManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T14:21:10.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DatabaseManager.cs",
+              "DocumentMoniker": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\DatabaseManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DatabaseManager.cs",
+              "ToolTip": "C:\\Users\\Peter\\New 2D Rpg Udemy\\Assets\\Scripts\\DatabaseManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DatabaseManager.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAYwDEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T13:39:51.926Z"
             }
           ]
         }

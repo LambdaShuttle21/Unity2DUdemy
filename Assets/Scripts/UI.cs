@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
     [Space]
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI killCountText;
+    private bool gameOverAlreadyShown;
 
     private int killCount;
 
@@ -20,10 +21,19 @@ public class UI : MonoBehaviour
     }
     private void Update()
     {
-        timerText.text = Time.time.ToString("F2") + "s";
+        timerText.text = Time.time.ToString("F2") + "s";// first 2 decimals and "s" of seconds
     }
     public void EnableGameOverUI()
     {
+        if (gameOverAlreadyShown == true)
+        {
+            return;
+        }
+
+        gameOverAlreadyShown = true;
+
+        DatabaseManager.Instance.GuardarPartida(Time.time, killCount, "Game Over");
+
         Time.timeScale = 0.5f; // we slowdown the time by 50 percent
         gameOverUI.SetActive(true);
     } // activates the GameObject 
