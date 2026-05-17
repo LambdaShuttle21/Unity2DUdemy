@@ -4112,7 +4112,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   groundCheck: {fileID: 1321251222}
-  groundCheckDistance: 0
+  groundCheckDistance: 0.3
   isGrounded: 0
   whatIsGround:
     serializedVersion: 2
